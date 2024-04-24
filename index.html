@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contador 2</title>
+        <style>
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background: #EEE;
+                text-align: center;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section {
+                background: #FFF;
+                padding: 50px;
+                border-radius: 10px;
+                box-shadow: 0 10px 50px #BBB;
+            }
+
+            h1 {
+                font-size: 90px;
+            }
+
+            button {
+                padding: 10px 30px;
+                font-size: 30px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button.positive {
+                background: rgb(153, 237, 153);
+            }
+            button.positive:hover {
+                background: rgb(115, 207, 115);
+            }
+
+            button.negative {
+                background: rgb(243, 134, 134);
+            }
+            button.negative:hover {
+                background: rgb(240, 114, 114);
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <h1>0</h1>
+            <button class="positive" onclick="add()">+</button>
+            <button class="negative" onclick="sub()">-</button>
+        </section>
+        <script>
+
+            const h1 = document.querySelector("h1")
+
+            function add() {
+                h1.innerText = +h1.innerText + 1
+            }
+
+            function sub() {
+                h1.innerText = +h1.innerText - 1
+            }
+        </script>
+    </body>
+</html>
