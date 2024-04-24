@@ -49,9 +49,20 @@
             button.negative:hover {
                 background: rgb(240, 114, 114);
             }
+
+            div {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 20px;
+                background: black;
+                color: white;
+                padding: 10px;
+            }
         </style>
     </head>
     <body>
+        <div>0</div>
         <section>
             <h1>0</h1>
             <button class="positive" onclick="add()">+</button>
@@ -60,13 +71,25 @@
         <script>
 
             const h1 = document.querySelector("h1")
+            const div = document.querySelector("div")
+
+            let numero = 0
 
             function add() {
-                h1.innerText = +h1.innerText + 1
+                numero = numero + 1
+                if (numero == 7) numero = 8
+                atualizaTela()
             }
 
             function sub() {
-                h1.innerText = +h1.innerText - 1
+                numero = numero - 1
+                if (numero == 7) numero = 6
+                atualizaTela()
+            }
+
+            function atualizaTela() {
+                h1.innerText = numero
+                div.innerText = numero
             }
         </script>
     </body>
